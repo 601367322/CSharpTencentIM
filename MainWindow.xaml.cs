@@ -29,14 +29,14 @@ namespace WpfApp1
             InitializeComponent();
             Trace.WriteLine(TencentIMSDK.GetSDKVersion());
             SdkConfig sdkConfig = new SdkConfig();
-            long SDKAppId = 1400486080;
-            string UserId = "111";
-            string UserSig = "eJwtzEELgjAYxvHvsnPYO3VzCh2CQpIwqx27GFv6KoqsFWH03TPb8fk98H8TuT97T21IQnwPyGLeqHRv8YYzU0od31VbDgMqktAQIBQcBPwf-RrQ6MkZYz6AU4vdz7hgIgwiFrgKVlNVZuZkRnk8pGlcN3nXxk0m8-5qI15vWLHd2fQxFlV-Wa7Finy*jWIwcA__";            
+            long SDKAppId = ;
+            string UserId = ;
+            string UserSig = ;            
             TencentIMSDK.Init(SDKAppId, sdkConfig, true);
             TencentIMSDK.AddRecvNewMsgCallback((List<Message> message, string user_data) => {
                
             },(string message, string user_data) => {
-                Trace.WriteLine( message);
+                Trace.WriteLine(message);
             });
             TencentIMSDK.Login(UserId, UserSig, (int code, string desc, string user_data) => {
                 Trace.WriteLine(desc);
