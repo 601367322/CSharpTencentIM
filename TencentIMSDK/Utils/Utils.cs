@@ -23,7 +23,7 @@ namespace com.tencent.imsdk.unity.utils
 
         return Marshal.StringToHGlobalAnsi("");
       }
-      return Marshal.StringToHGlobalAnsi(str);
+      return Marshal.StringToCoTaskMemUTF8(str);
     }
     public static string intptr2string(IntPtr ptr)
     {
