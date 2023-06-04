@@ -46,12 +46,14 @@ namespace WpfApp1
                 //自动回复
                 List<Message> messages = JsonConvert.DeserializeObject<List<Message>>(message);
                 Message bean = messages[0];
-                Message sendMessage = new Message();
-                sendMessage.message_elem_array = new List<Elem>(){
+                Message sendMessage = new Message
+                {
+                    message_elem_array = new List<Elem>(){
                     new Elem(){
                         elem_type = TIMElemType.kTIMElem_Text,
                         text_elem_content = SendMsgTemp,
                     }
+                }
                 };
                 TencentIMSDK.MsgSendMessage(bean.message_conv_id, TIMConvType.kTIMConv_C2C, sendMessage, null, (int code, string desc, Message data, string user_data)=> {
                     Trace.WriteLine(desc);
