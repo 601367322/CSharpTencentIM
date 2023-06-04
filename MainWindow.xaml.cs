@@ -43,13 +43,5 @@ namespace WpfApp1
             });
         }
 
-        public string UTF8ToUnicode(string recvStr)
-        {
-            byte[] tempStr = Encoding.UTF8.GetBytes(recvStr);
-            byte[] tempDef = Encoding.Convert(Encoding.UTF8, Encoding.Default, tempStr);
-            string msgBody = Encoding.Default.GetString(tempDef);
-            return msgBody;
-        } 
-
     }
 }
