@@ -32,9 +32,9 @@ namespace WpfApp1
             InitializeComponent();
             Trace.WriteLine(TencentIMSDK.GetSDKVersion());
             SdkConfig sdkConfig = new SdkConfig();
-            long SDKAppId = 1400486080;
-            string UserId = "111";
-            string UserSig = "eJwtzFELgjAUhuH-suuwc5aTJXQhEmRIQRkSdCNsxkGSTS2t6L9ntsvv*eB9syw9eg-dsJBxD9hs2qR03VFJEyOi41ZVhTGkWIg*gC8DkPB-9GCo0aMLITiA045uPwukkILzJboKXcdqfNojbLI*TrZ3taNFW537cp1znScvOtjOqtRe5nVUPAdYsc8XhJsw3Q__";
+            long SDKAppId = ;
+            string UserId = ;
+            string UserSig = ;
             string SendMsgTemp = "自动回复";
 
             TencentIMSDK.Init(SDKAppId, sdkConfig, true);
