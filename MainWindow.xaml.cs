@@ -29,17 +29,16 @@ namespace WpfApp1
             InitializeComponent();
             Trace.WriteLine(TencentIMSDK.GetSDKVersion());
             SdkConfig sdkConfig = new SdkConfig();
-
-            TencentIMSDK.Init(1400486080, sdkConfig, true);
+            long SDKAppId = 1400486080;
+            string UserId = "111";
+            string UserSig = "eJwtzEELgjAYxvHvsnPYO3VzCh2CQpIwqx27GFv6KoqsFWH03TPb8fk98H8TuT97T21IQnwPyGLeqHRv8YYzU0od31VbDgMqktAQIBQcBPwf-RrQ6MkZYz6AU4vdz7hgIgwiFrgKVlNVZuZkRnk8pGlcN3nXxk0m8-5qI15vWLHd2fQxFlV-Wa7Finy*jWIwcA__";            
+            TencentIMSDK.Init(SDKAppId, sdkConfig, true);
             TencentIMSDK.AddRecvNewMsgCallback((List<Message> message, string user_data) => {
-                Trace.WriteLine(message);
-            },(string message, string user_data) => {
                
+            },(string message, string user_data) => {
                 Trace.WriteLine( message);
-
-
             });
-            TencentIMSDK.Login("111", "eJwtzEELgjAYxvHvsnPYO3VzCh2CQpIwqx27GFv6KoqsFWH03TPb8fk98H8TuT97T21IQnwPyGLeqHRv8YYzU0od31VbDgMqktAQIBQcBPwf-RrQ6MkZYz6AU4vdz7hgIgwiFrgKVlNVZuZkRnk8pGlcN3nXxk0m8-5qI15vWLHd2fQxFlV-Wa7Finy*jWIwcA__", (int code, string desc, string user_data) => {
+            TencentIMSDK.Login(UserId, UserSig, (int code, string desc, string user_data) => {
                 Trace.WriteLine(desc);
             });
         }
